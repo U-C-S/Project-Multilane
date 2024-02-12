@@ -3,43 +3,43 @@ use std::collections::VecDeque;
 fn main() {
     println!("Hello, world!");
 
-    let two_lane_bidir_road = road_laned {
+    let two_lane_bidir_road = RoadLaned {
         lanes: VecDeque::from([
-            lane {
+            Lane {
                 id: 1,
                 length: None,
                 speed_limit: 60,
-                direction: direction::left,
+                direction: Direction::Left,
             },
-            lane {
+            Lane {
                 id: 2,
                 length: None,
                 speed_limit: 60,
-                direction: direction::right,
+                direction: Direction::Right,
             }
         ]),
         median_strip: false,
     };
 }
 
-struct lane {
+struct Lane {
     id: i32,
     length: Option<i32>,
     // width: i32,
     speed_limit: i32,
-    direction: direction,
+    direction: Direction,
 }
 
-enum direction {
-    left,
-    right,
+enum Direction {
+    Left,
+    Right,
 }
 
-struct road_laned {
-    lanes: VecDeque<lane>,
+struct RoadLaned {
+    lanes: VecDeque<Lane>,
     median_strip: bool,
 }
 
-struct node {
-    
+struct Node {
+    path: String, // quadratic bezier curve serialized as a string
 }
