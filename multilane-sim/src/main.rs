@@ -1,5 +1,7 @@
 use std::collections::VecDeque;
 
+use bevy::app::App;
+
 fn main() {
     println!("Hello, world!");
 
@@ -16,10 +18,12 @@ fn main() {
                 length: None,
                 speed_limit: 60,
                 direction: Direction::Right,
-            }
+            },
         ]),
         median_strip: false,
     };
+
+    App::new().run();
 }
 
 struct Lane {
